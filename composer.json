@@ -1,0 +1,31 @@
+{
+    "name": "symfony/unione-mailer",
+    "type": "symfony-bridge",
+    "description": "Symfony UniOne Mailer Bridge",
+    "keywords": [],
+    "homepage": "https://symfony.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dmytro Kharytonov",
+            "email": "dkharitonov@unisender.com"
+        },
+        {
+            "name": "Symfony Community",
+            "homepage": "https://symfony.com/contributors"
+        }
+    ],
+    "require": {
+        "symfony/mailer": "^4.4|^5.0"
+    },
+    "require-dev": {
+        "symfony/http-client": "^4.4|^5.0",
+        "phpunit/phpunit": "8.5.x-dev"
+    },
+
+    "autoload": {
+        "psr-4": { "Symfony\\Component\\Mailer\\Bridge\\UniOne\\": "" }
+    },
+
+    "minimum-stability": "dev"
+}
