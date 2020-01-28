@@ -151,13 +151,13 @@ class UniOneApiTransport extends AbstractApiTransport
 
     private function getAttachmentFilename(DataPart $attachment, Headers $headers): ?string
     {
-        preg_match('/name[^;\n=]*=(([\'"]).*?\2|[^;\n]*)/', $headers->get('Content-Type')->getBodyAsString(), $mathes);
+        preg_match('/name[^;\n=]*=(([\'"]).*?\2|[^;\n]*)/', $headers->get('Content-Type')->getBodyAsString(), $matches);
 
-        if (isset($mathes[0])) {
+        if (isset($matches[0])) {
             if ('inline' === $headers->getHeaderBody('Content-Disposition')) {
-                return str_replace('name=', '', $mathes[0]);
+                return str_replace('name=', '', $matches[0]);
             } else {
-                return str_replace('name=', '', sprintf('%s.%s', $mathes[0] , $attachment->getMediaSubtype()));
+                return str_replace('name=', '', sprintf('%s.%s', $matches[0] , $attachment->getMediaSubtype()));
             }
         }
 
